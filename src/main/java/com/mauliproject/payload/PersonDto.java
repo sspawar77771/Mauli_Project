@@ -38,6 +38,9 @@ public class PersonDto {
     private Integer donationAmount;
 
     @NotNull
-    private LocalDateTime dateTime;
+    private LocalDateTime createdDateAndTime;
+
+    @NotNull
+    private LocalDateTime updatedDateAndTime;
 
 }

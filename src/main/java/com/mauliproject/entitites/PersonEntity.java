@@ -1,7 +1,10 @@
 package com.mauliproject.entitites;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.repository.Temporal;
 
 import javax.persistence.*;
@@ -34,7 +37,18 @@ public class PersonEntity {
     @Column(name = "Donation_Amount")
     private Integer donationAmount;
 
-    @Column(name = "Date_of_Donation")
-    private LocalDateTime dateTime;
 
+    /*Using only this annotation can use the date and time value from entity class and will be saved into
+     *database as created date.
+     */
+    @CreationTimestamp
+    @Column(name = "Date_of_Donation")
+    private LocalDateTime createdDateAndTime;
+
+    /*Using only this annotation can use the date and time value from entity class and will be saved into
+     *database as updated date and changes accordingly when updated
+     */
+    @UpdateTimestamp
+    @Column(name = "Updated_date_of_Donation")
+    private LocalDateTime updatedDateAndTime;
 }

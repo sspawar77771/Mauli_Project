@@ -27,8 +27,6 @@ public class PersonServiceImpl implements PersonService {
     public PersonDto createPerson(PersonDto personDto) {
         PersonEntity person = this.modelMapper.map(personDto, PersonEntity.class);
 
-        person.setDateTime(LocalDateTime.now());
-
         PersonEntity savedPerson = this.personRepo.save(person);
 
         PersonDto personDtoSaved = this.modelMapper.map(savedPerson, PersonDto.class);
@@ -45,7 +43,7 @@ public class PersonServiceImpl implements PersonService {
         personEntity.setEmail(personDto.getEmail());
         personEntity.setMobile_no(personDto.getMobile_no());
         personEntity.setDonationAmount(personDto.getDonationAmount());
-        personEntity.setDateTime(LocalDateTime.now());
+        personEntity.setUpdatedDateAndTime(LocalDateTime.now());
 
         PersonDto updatedDto = this.modelMapper.map(personEntity, PersonDto.class);
 
