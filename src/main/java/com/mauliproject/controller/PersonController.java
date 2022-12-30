@@ -3,7 +3,6 @@ package com.mauliproject.controller;
 import com.mauliproject.payload.PersonDto;
 import com.mauliproject.repository.PersonRepo;
 import com.mauliproject.service.PersonService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,6 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+/*swagger url
+*http://localhost:8081/swagger-ui/index.html
+*http://localhost:8081/v2/api-docs
+*/
 @RestController
 @RequestMapping("/api")
 public class PersonController {
