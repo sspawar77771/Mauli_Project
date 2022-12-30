@@ -3,6 +3,7 @@ package com.mauliproject.controller;
 import com.mauliproject.payload.PersonDto;
 import com.mauliproject.repository.PersonRepo;
 import com.mauliproject.service.PersonService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,7 +22,7 @@ public class PersonController {
     @Autowired
     private PersonRepo personRepo;
 
-    @PostMapping(value = "/create/person",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/create/person")
     public ResponseEntity<PersonDto> createPerson(@RequestBody PersonDto personDto){
         PersonDto person = this.personService.createPerson(personDto);
 
